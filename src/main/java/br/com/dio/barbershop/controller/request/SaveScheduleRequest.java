@@ -16,6 +16,6 @@ public record SaveScheduleRequest(
 
         @NotNull
         @JsonProperty("clientId")
-        Long id
+        Long clientId
 ) {
 }
