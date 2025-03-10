@@ -10,7 +10,7 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 @Repository
-public interface ScheduleRepository extends JpaRepository<ScheduleEntity, Long> {
+public interface IScheduleRepository extends JpaRepository<ScheduleEntity, Long> {
 
     @Query("SELECT s FROM ScheduleEntity s WHERE s.startAt >= :startIn AND s.endAt <= :endIn ORDER BY s.startAt, s.endAt")
     List<ScheduleEntity> getAllBetweenDates(@Param("startIn") OffsetDateTime startIn, @Param("endIn") OffsetDateTime endIn);

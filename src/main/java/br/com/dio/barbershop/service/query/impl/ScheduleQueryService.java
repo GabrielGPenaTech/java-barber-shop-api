@@ -3,7 +3,7 @@ package br.com.dio.barbershop.service.query.impl;
 import br.com.dio.barbershop.entity.ScheduleEntity;
 import br.com.dio.barbershop.exception.NotFoundException;
 import br.com.dio.barbershop.exception.ScheduleInUseException;
-import br.com.dio.barbershop.repository.ScheduleRepository;
+import br.com.dio.barbershop.repository.IScheduleRepository;
 import br.com.dio.barbershop.service.query.IScheduleQueryService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ScheduleQueryService implements IScheduleQueryService {
 
-    private final ScheduleRepository scheduleRepository;
+    private final IScheduleRepository scheduleRepository;
 
     @Override
     public ScheduleEntity findById(Long id) {
