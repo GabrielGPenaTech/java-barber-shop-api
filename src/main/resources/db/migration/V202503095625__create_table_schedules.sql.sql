@@ -1,0 +1,8 @@
+CREATE TABLE schedules  (
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  start_in timestamp NOT NULL,
+  end_in timestamp NOT NULL,
+  client_id BIGSERIAL NOT NULL,
+  CONSTRAINT UK_SCHEDULE_INTERVAL UNIQUE (start_in, end_in),
+  CONSTRAINT UK_CLIENTS_SCHEDULES FOREIGN KEY (client_id) REFERENCES CLIENTS(id)
+);
