@@ -56,7 +56,7 @@ tasks.named("build") {
 	doLast {
 		val trigger = file("src/main/resources/trigger.txt")
 		if (!trigger.exists()) {
-			trigger.mkdirs()
+			trigger.createNewFile()
 		}
 
 		trigger.writeText(Date().time.toString())
